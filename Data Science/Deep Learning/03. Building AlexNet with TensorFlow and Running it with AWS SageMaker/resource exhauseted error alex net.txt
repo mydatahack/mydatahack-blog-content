@@ -1,0 +1,133 @@
+---------------------------------------------------------------------------
+ResourceExhaustedError                    Traceback (most recent call last)
+~/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/client/session.py in _do_call(self, fn, *args)
+   1322     try:
+-> 1323       return fn(*args)
+   1324     except errors.OpError as e:
+
+~/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/client/session.py in _run_fn(session, feed_dict, fetch_list, target_list, options, run_metadata)
+   1301                                    feed_dict, fetch_list, target_list,
+-> 1302                                    status, run_metadata)
+   1303 
+
+~/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/framework/errors_impl.py in __exit__(self, type_arg, value_arg, traceback_arg)
+    472             compat.as_text(c_api.TF_Message(self.status.status)),
+--> 473             c_api.TF_GetCode(self.status.status))
+    474     # Delete the underlying status object from memory otherwise it stays alive
+
+ResourceExhaustedError: OOM when allocating tensor with shape[200704,4096]
+	 [[Node: w_d1/Assign = Assign[T=DT_FLOAT, _class=["loc:@w_d1"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](w_d1, w_d1/Initializer/random_uniform)]]
+
+During handling of the above exception, another exception occurred:
+
+ResourceExhaustedError                    Traceback (most recent call last)
+<ipython-input-21-bca8cdc7c839> in <module>()
+      1 # (11) Run
+      2 with tf.Session() as session:
+----> 3     session.run(initializer_op)
+      4 
+      5     print("Training for", epochs, "epochs.")
+
+~/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/client/session.py in run(self, fetches, feed_dict, options, run_metadata)
+    887     try:
+    888       result = self._run(None, fetches, feed_dict, options_ptr,
+--> 889                          run_metadata_ptr)
+    890       if run_metadata:
+    891         proto_data = tf_session.TF_GetBuffer(run_metadata_ptr)
+
+~/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/client/session.py in _run(self, handle, fetches, feed_dict, options, run_metadata)
+   1118     if final_fetches or final_targets or (handle and feed_dict_tensor):
+   1119       results = self._do_run(handle, final_targets, final_fetches,
+-> 1120                              feed_dict_tensor, options, run_metadata)
+   1121     else:
+   1122       results = []
+
+~/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/client/session.py in _do_run(self, handle, target_list, fetch_list, feed_dict, options, run_metadata)
+   1315     if handle is None:
+   1316       return self._do_call(_run_fn, self._session, feeds, fetches, targets,
+-> 1317                            options, run_metadata)
+   1318     else:
+   1319       return self._do_call(_prun_fn, self._session, handle, feeds, fetches)
+
+~/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/client/session.py in _do_call(self, fn, *args)
+   1334         except KeyError:
+   1335           pass
+-> 1336       raise type(e)(node_def, op, message)
+   1337 
+   1338   def _extend_graph(self):
+
+ResourceExhaustedError: OOM when allocating tensor with shape[200704,4096]
+	 [[Node: w_d1/Assign = Assign[T=DT_FLOAT, _class=["loc:@w_d1"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](w_d1, w_d1/Initializer/random_uniform)]]
+
+Caused by op 'w_d1/Assign', defined at:
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/ipykernel/__main__.py", line 3, in <module>
+    app.launch_new_instance()
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/traitlets/config/application.py", line 658, in launch_instance
+    app.start()
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/ipykernel/kernelapp.py", line 478, in start
+    self.io_loop.start()
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/zmq/eventloop/ioloop.py", line 177, in start
+    super(ZMQIOLoop, self).start()
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tornado/ioloop.py", line 888, in start
+    handler_func(fd_obj, events)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tornado/stack_context.py", line 277, in null_wrapper
+    return fn(*args, **kwargs)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/zmq/eventloop/zmqstream.py", line 440, in _handle_events
+    self._handle_recv()
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/zmq/eventloop/zmqstream.py", line 472, in _handle_recv
+    self._run_callback(callback, msg)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/zmq/eventloop/zmqstream.py", line 414, in _run_callback
+    callback(*args, **kwargs)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tornado/stack_context.py", line 277, in null_wrapper
+    return fn(*args, **kwargs)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/ipykernel/kernelbase.py", line 283, in dispatcher
+    return self.dispatch_shell(stream, msg)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/ipykernel/kernelbase.py", line 233, in dispatch_shell
+    handler(stream, idents, msg)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/ipykernel/kernelbase.py", line 399, in execute_request
+    user_expressions, allow_stdin)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/ipykernel/ipkernel.py", line 208, in do_execute
+    res = shell.run_cell(code, store_history=store_history, silent=silent)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/ipykernel/zmqshell.py", line 537, in run_cell
+    return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/IPython/core/interactiveshell.py", line 2728, in run_cell
+    interactivity=interactivity, compiler=compiler, result=result)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/IPython/core/interactiveshell.py", line 2850, in run_ast_nodes
+    if self.run_code(code, result):
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/IPython/core/interactiveshell.py", line 2910, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-16-e963c7861ba1>", line 2, in <module>
+    predictions = alexNet(x)
+  File "<ipython-input-15-5d6716782869>", line 59, in alexNet
+    w_d1 = tf.get_variable('w_d1', [28*28*256, 4096], initializer=w_init)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/ops/variable_scope.py", line 1203, in get_variable
+    constraint=constraint)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/ops/variable_scope.py", line 1092, in get_variable
+    constraint=constraint)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/ops/variable_scope.py", line 425, in get_variable
+    constraint=constraint)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/ops/variable_scope.py", line 394, in _true_getter
+    use_resource=use_resource, constraint=constraint)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/ops/variable_scope.py", line 805, in _get_single_variable
+    constraint=constraint)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/ops/variables.py", line 213, in __init__
+    constraint=constraint)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/ops/variables.py", line 346, in _init_from_args
+    validate_shape=validate_shape).op
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/ops/state_ops.py", line 276, in assign
+    validate_shape=validate_shape)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/ops/gen_state_ops.py", line 57, in assign
+    use_locking=use_locking, name=name)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py", line 787, in _apply_op_helper
+    op_def=op_def)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/framework/ops.py", line 2956, in create_op
+    op_def=op_def)
+  File "/home/ec2-user/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/tensorflow/python/framework/ops.py", line 1470, in __init__
+    self._traceback = self._graph._extract_stack()  # pylint: disable=protected-access
+
+ResourceExhaustedError (see above for traceback): OOM when allocating tensor with shape[200704,4096]
+	 [[Node: w_d1/Assign = Assign[T=DT_FLOAT, _class=["loc:@w_d1"], use_locking=true, validate_shape=true, _device="/job:localhost/replica:0/task:0/device:CPU:0"](w_d1, w_d1/Initializer/random_uniform)]]

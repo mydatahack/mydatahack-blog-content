@@ -1,0 +1,10 @@
+Product_Id,Product_Name,Unit_Price
+A101,Chainsaw,1000.00
+A102,Saw,54.00
+A103,Hammer,12.00
+A104,Lawn Mower,1500.00
+A105,Multi Purpose Mixing Drill,101.00
+B101,Cordless Drills,92.00
+B102,5000W Portable Diesel Generator,2100.00
+B103,1100W Portable 4 Stroke Petrol Generator,421.00 
+B104,Firefighting Pump Hose Kit,218.00

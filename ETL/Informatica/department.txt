@@ -1,0 +1,6 @@
+Dept_Id,Department
+A1,Sales
+A2,IT
+A3,Finance
+A4,Human Resources
+A5,Marketing

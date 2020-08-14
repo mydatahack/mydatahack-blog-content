@@ -1,0 +1,4 @@
+user=
+password=
+domain=dwservices-dev.aws.open.edu.au:9445
+server=DWENGINE-dev.AWS.OPEN.EDU.AU

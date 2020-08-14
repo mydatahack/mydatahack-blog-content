@@ -1,0 +1,14 @@
+"Id","Name","TransactionId","Transaction.ItemId","Transaction.price","Subscriber","Payment.Type","Payment.Total","Payment.Success","Note"
+100,"John","tran1","a100",200,true,"Credit-Card",400,true,"1st Complete Record"
+100,"John","tran1","a110",200,true,"Credit-Card",400,true,"1st Complete Record"
+101,"Tom","tran2","a100",200,true,"Debit-Card",400,true,
+101,"Tom","tran2","a110",200,true,"Debit-Card",400,true,
+102,"Margaret","tran3","a100",200,true,"Credit-Card",400,true,
+102,"Margaret","tran3","a110",200,true,"Credit-Card",400,true,
+103,"Dylan","tran4","a100",200,true,,,,"Payment is Null"
+103,"Dylan","tran4","a110",200,true,,,,"Payment is Null"
+104,"Oliver","tran5","a100",200,true,,400,true,"Payment Type is missing"
+104,"Oliver","tran5","a110",200,true,,400,true,"Payment Type is missing"
+105,"Sarah","tran6","a100",200,true,,,,"Payment is missing"
+105,"Sarah","tran6","a123",1000,true,,,,"Payment is missing"
+105,"Sarah","tran6","a134",400,true,,,,"Payment is missing"

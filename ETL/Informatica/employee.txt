@@ -1,0 +1,11 @@
+Empl_Id,Name,Extension,Email,Dept_Id,Position,Effective_Date
+101,John D,2356,john@email.com,A1,Sales Rep,2017-03-04 00:00:00
+102,Dylan K,2456,dylan@email.com,A1,Sales Rep,2017-06-30 00:00:00
+103,Sarah S,2367,sarah@email.com,A1,Sales Rep,2017-05-10 00:00:00
+104,Nick C,2221,nick@email.com,A1,Sales Manager,2016-02-02 00:00:00
+105,Stuart K,3421,stuart@email.com,A2,Developer,2016-02-02 00:00:00
+106,Phillip D,3211,phillip@email.com,A3,Accountant,2015-05-10 00:00:00
+107,Emily D,2344,emily@email.com,A3,Finance Analyst,2015-05-10 00:00:00
+108,Arron M,3776,arron@email.com,A4,Recruitment Officer,2015-03-04 00:00:00
+109,Joan L,6453,joan@email.com,A4,Assistant,2017-05-10 00:00:00
+110,Sylvia P,6511,sylvia@email.com,A5,PR Officer,2016-02-02 00:00:00

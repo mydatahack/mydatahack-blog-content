@@ -1,0 +1,52 @@
+#################################################################
+(1) Use babel register so that new ES syntax runs on Node.js
+#################################################################
+
+npm i --save-dev @babel/core @babel/register
+
+#################################################################
+(2) Unit test tools
+#################################################################
+
+npm i --save-dev mocha chai fake jsdom sinon
+npm i --save-dev enzyme enzyme-adapter-react-16
+
+#############################################################
+(3) Mocha command has to register babael
+###########################################################
+
+ "test": "mocha -r @babel/register -r ./browser.js  **/test/**/*.spec.js --recursive"
+
+
+#############################################################
+(4) Add JSDOM comfig - from https://airbnb.io/enzyme/docs/guides/jsdom.html
+(4-2) Then add enzyme config at the bottom - not in the documentation above
+###########################################################
+
+import { JSDOM } from 'jsdom';
+const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = jsdom;
+
+function copyProps(src, target) {
+  Object.defineProperties(target, {
+    ...Object.getOwnPropertyDescriptors(src),
+    ...Object.getOwnPropertyDescriptors(target),
+  });
+}
+
+global.window = window;
+global.document = window.document;
+global.navigator = {
+  userAgent: 'node.js',
+};
+global.requestAnimationFrame = function (callback) {
+  return setTimeout(callback, 0);
+};
+global.cancelAnimationFrame = function (id) {
+  clearTimeout(id);
+};
+copyProps(window, global);
+
+import enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+enzyme.configure({ adapter: new Adapter() })

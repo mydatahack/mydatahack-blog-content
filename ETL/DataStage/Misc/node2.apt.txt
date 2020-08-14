@@ -1,0 +1,18 @@
+# 2Node.apt
+
+{
+    node "node1"
+    {
+        fastname "<Your DataStage Server URL>"
+        pools ""
+        resource disk "/scratch" {pools ""}
+        resource scratchdisk "/scratch" {pools ""}
+    }
+    node "node2"
+    {
+        fastname "<Your DataStage Server URL>"
+        pools ""
+        resource disk "/scratch" {pools ""}
+        resource scratchdisk "/scratch" {pools ""}
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <button type="button" onClick="helloWorld();">Click Me</button>
+    <p id="target"></p>
+    <script>
+        function helloWorld() {
+            var element = document.getElementById('target');
+            var elemChild = element.firstChild;
+            if(elemChild) {
+                if(elemChild.nodeValue.length >= 1) {
+                    console.log(elemChild.nodeValue);
+                    elemChild.nodeValue="";
+                } else {
+                    elemChild.nodeValue="Hello World";
+                }
+            }
+            else {
+                element.innerHTML="Hello World";
+            };
+            
+        }
+    </script>
+    <h4>Conter</h4>
+    <p id="counter"></p>
+    <script>
+    var counter = 10;
+    window.addEventListener('load', function() {
+        displayCount()
+        setInterval(function(){displayCount()}, 1000);
+
+        setInterval(function(){flashButton()}, 100);
+        // setInterval(function(){loadDoc()}, 500)
+
+        loadDoc();
+        timeoutLoop();
+    })
+
+
+    function displayCount() {
+        var element = document.getElementById('counter');
+        element.innerHTML = counter;
+        counter -= 1;
+        console.log(counter)
+        if (counter === -1) {
+            counter = 10
+        }
+    }
+    </script>
+    <h4>Flasher</h4>
+    <button id="flasher" class='yellow-button' type="button">Click Me</button>
+    <style>
+        .yellow-button{
+            background-color: yellow;
+        }
+        .pink-button {
+            background-color: pink;
+
+        }
+    </style>
+    <script>
+
+        function flashButton() {
+            var element = document.getElementById('flasher');
+            if(element.className.includes('yellow'))
+            {
+                element.className = "pink-button"
+            } else {
+                element.className = "yellow-button"
+            }
+        }
+    </script>
+
+    <h4>AJAX call</h4>
+    <p id="ajax"></p>
+    <script>
+        function timeoutLoop() {
+            setTimeout(function () {
+                loadDoc();
+                timeoutLoop();
+            }, 1000);
+        }
+
+        function loadDoc() {
+
+            var xhttp = new XMLHttpRequest();
+            var element = document.getElementById("ajax");
+            element.innerHTML = "";
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    element.innerHTML = this.responseText;
+                }
+            };
+            
+            xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos/1", true);
+            xhttp.send(); 
+        }
+    </script>
+</body>
+</html>

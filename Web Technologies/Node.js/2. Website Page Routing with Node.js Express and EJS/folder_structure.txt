@@ -1,0 +1,18 @@
+-- project_folder
+ -- css
+    -- style.css
+ -- html
+    -- about.ejs
+    -- contact.ejs
+    -- index.ejs
+    -- include
+        -- footer.ejs
+        -- head.ejs
+        -- nav.ejs
+        -- scripts.ejs
+ -- routes
+    -- index.js
+ -- app.js
+ -- package.json
+ -- package-lock.json
+ -- node_modules

@@ -1,0 +1,8 @@
+s3uploader
+    - README.txt
+    - LICENSE.txt
+    - setup.py
+    - s3uploader
+        - s3.py
+        - __init__.py
+    
