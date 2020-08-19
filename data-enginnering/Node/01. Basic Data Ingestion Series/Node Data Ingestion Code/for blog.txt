@@ -1,0 +1,29 @@
+# (1) Setting up
+
+[cc lang="bash" tab_size="4" lines="-1" theme="mac-classic" line_numbers="false"]
+mkdir node-pg-test
+cd node-pg-test
+npm init
+npm i pg -ES
+npm i pg-copy-streams -ES
+[/cc]
+
+# (2) Config file
+
+[cc lang="text" tab_size="4" lines="-1"  line_numbers="false"]
+{
+    "host": "your host",
+    "user": "your username",
+    "pw": "your password",
+    "db": "your database name",
+    "port": "port, 5432 is default"
+}
+[/cc]
+
+# (3) Importing Module
+
+# (4) Truncate
+
+# (5) Load
+
+# (6) Truncate & Load

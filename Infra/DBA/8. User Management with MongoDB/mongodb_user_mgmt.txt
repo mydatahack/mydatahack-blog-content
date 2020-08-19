@@ -1,0 +1,83 @@
+# (1) Get a list of users
+use admin
+db.getUsers()
+
+db.getUser('admin')
+
+# (2) Create DBA Credential
+# The database owner can perform any administrative action on the database.
+# This role combines the privileges granted by the readWrite, dbAdmin and userAdmin roles.
+use admin
+db.createUser({
+  user: "admin",
+  pwd: "Password1",
+  roles: ["readWriteAnyDatabase", "clusterAdmin",
+  "userAdminAnyDatabase", "dbAdminAnyDatabase"]
+})
+
+db.createUser({
+  user: "root",
+  pwd: "Password1",
+  roles: ["root"]
+})
+
+db.grantRolesToUser(
+    "admin",
+    [
+      { role: "dbAdmin" }
+    ]
+)
+
+
+# (1) Create Writer Credential
+use admin
+db.createUser ({
+  user: "writer",
+  pwd: "Password1",
+  roles: ["readWriteAnyDatabase"]
+})
+
+
+# (2) Create Readonly Credential
+use admin
+db.createUser ({
+  user: "readonly",
+  pwd: "Password1",
+  roles: ["readAnyDatabase"]
+})
+
+# (3) Create a special Credential
+use admin
+db.createUser(
+   {
+     user: "special",
+     pwd: "Password1",
+     roles:
+       [
+         { role: "readWrite", db: "usermanaged" },
+         "readAnyDatabase"
+       ]
+   }
+)
+
+# (6) Log in as a user for testing permissions
+
+mongod --auth --port 27017 --dbpath /data/db
+mongo admin --host localhost --port 27017 -u root -p Password1
+mongo admin --host localhost --port 27017 -u admin -p Password1
+mongo admin --host localhost --port 27017 -u writer -p Password1
+mongo admin --host localhost --port 27017 -u readonly -p Password1
+mongo admin --host localhost --port 27017 -u special -p Password1
+
+# (7) You can drop the user
+
+db.dropUser('readonly')
+db.dropUser('writer')
+db.dropUser('dba')
+db.dropUser('special')
+db.dropUser('admin')
+
+
+REFERENCE
+MongoDB Built-In Roles: https://docs.mongodb.com/manual/reference/built-in-roles/#built-in-roles
+Create Users with MongoDB: https://docs.mongodb.com/manual/reference/method/db.createUser/

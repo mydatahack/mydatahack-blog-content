@@ -1,0 +1,17 @@
+Unique Index with MongoDB
+
+Primary Key is reserved for the _id field.
+You can set unique index to prevent the same record inserted twince 
+
+# (1) Single
+db.students.createIndex( { "studentId": 1 }, { unique: true } )
+
+# (2) Compound
+db.students.createIndex( 
+    { "studentId": 1, lastname: 1, firstname: 1  },
+     { unique: true } )
+
+# (3) Get indexes
+db.students.getIndexes()
+
+REFERENCE: https://docs.mongodb.com/manual/core/index-unique/#create-a-unique-index

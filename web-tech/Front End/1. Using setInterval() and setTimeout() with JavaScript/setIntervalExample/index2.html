@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Moving Title</h4>
+    
+    <div id="carousel-div" >
+        <h1 id="carousel">Hello World</h1>
+    </div>
+    
+    <script>
+        
+        // https://www.w3schools.com/howto/howto_js_animate.asp
+        var offset = 0;
+        window.addEventListener('load', function(){  
+            setInterval(function(){moveLeft();}, 10);
+            //setInterval(function(){moveImg();}, 10);
+        })
+
+        function moveLeft() {
+          
+            var element = document.getElementById("carousel");
+            element.style.left = offset + "px";
+            element.style.top = document.getElementById("carousel-div").offsetTop;
+            element.style.position = "absolute";
+
+            
+            console.log(document.getElementById("carousel-div").offsetTop);
+
+            if (offset >= document.getElementById("carousel-div").offsetWidth - element.offsetWidth) {
+                offset = 0;
+            } else {
+                offset += 1;
+            }
+        }
+    </script>
+
+<h4>Moving Image</h4>
+<div id="img-carousel-div">
+    <img src="./img/img.png" id="img"/>
+</div>
+<script>
+    
+
+    function moveImg() {
+      
+        var element = document.getElementById("img");
+        element.style.left = offset + "px";
+        element.style.position = "absolute";
+        console.log(element.style.left)
+        console.log(document.getElementById("img-carousel-div").offsetTop)
+        
+        if (offset >= document.getElementById("img-carousel-div").offsetWidth) {
+            offset = 0;
+        } else {
+            offset += 1;
+        }
+    }
+</script>
+</body>
+</html>
