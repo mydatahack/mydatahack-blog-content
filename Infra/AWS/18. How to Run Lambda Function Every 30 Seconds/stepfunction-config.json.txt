@@ -1,0 +1,21 @@
+{
+  "Comment": "First Ingestion",
+  "StartAt": "dataIngestion1",
+  "States": {
+    "dataIngestion1": {
+      "Type": "Task",
+      "Resource": "arn for lambda
+      "Next": "waitIngestion"
+    },
+    "waitIngestion": {
+      "Type": "Wait",
+      "Seconds": 30,
+      "Next": "dataIngestion2"
+    },
+    "dataIngestion2": {
+      "Type": "Task",
+      "Resource": "the same arn for the lambda as first",
+      "End": true
+    }
+  }
+}

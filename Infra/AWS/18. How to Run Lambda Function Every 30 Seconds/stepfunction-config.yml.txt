@@ -1,0 +1,26 @@
+stepFunctions:
+  stateMachines:
+    scheduleLambda30sec:
+      name: scheduleLambda30sec-${self:custom.env}
+      events:
+        - schedule: cron(0/1 9017 ? * MON-FRI *) 
+
+      definition:
+        Comment: "Running lambda every 30 seconds"
+        StartAt: lambdaExecute1
+        States:
+          lambdaExecute1:
+            Type: Task
+            Resource:
+              Fn::GetAtt: [lambdaRunEvery30sec, Arn]
+            Next: waitFor30sec
+          waitFor30sec:
+            Type: Wait
+            Seconds: 30
+            Next: lambdaExecute2
+          lambdaExecute2:
+            Type: Task
+            Resource:
+              Fn::GetAtt: [lambdaRunEvery30sec, Arn]
+            End: true
+  
