@@ -1,6 +1,6 @@
 # Getting Started with Lisp
 
-There are good reasons why you want to learn Lisp. As Paul Graham said, the reason why you want to learn it is the same as the reason why you want to learn Latin. You probably won't use Latin. But, the knowledge will make you see languages you use in a more enriched way. You don't need to know Lisp to write the next big app, but knowing it will make you a better problem solver. 
+There are good reasons why you want to learn Lisp. As Paul Graham said, the reason why you want to learn it is the same as the reason why you want to learn Latin. You probably won't use Latin. But, the knowledge will enrich your experience with the language you use daily. You don't need to learn Lisp to write the next big app or get your dream programming job, but knowing it will make you a better programmer.
 
 Here are some inspirations you need to get started with Lisp. 
 
