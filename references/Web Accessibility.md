@@ -16,7 +16,33 @@ This is a reference for web accessibility.
 2. Use heading hierarchically
 
 - Do not use bold instead of heading
-- Do not overuse headings. In most case, do not need more than h2 rank headings and the occasional h3.
+- Do not overuse headings. In most case, 
+
+## (2) Bold and Italic tags
+
+The bold tag `<b>` and the italic tag `<i>` are listed as a WCAG Level A error because most screen reader will not announce these changes to the screen reader user. They should not be used to style text when the author wants to emphasize a word or passage of text.
+
+Instead use the strong tag `<strong>` and the emphasis tag `<em>`. They are considered Semantic Markup that adds meaning to the content. Screen reader will understand these tags. Having said that, most screen readers will ignore them. The voice will not be raised because of these tags for the most of screen readers.
+
+See this reference (https://support.siteimprove.com/hc/en-gb/articles/115002726312-Accessibility-Bold-vs-Strong-and-Italic-vs-Emphasis)
+
+What about nesting these?
+
+Acceptable nesting
+
+```html
+<p>This is Paragraph speaking, <em>Hello world, it is <strong>me</strong><em></p>
+```
+
+This one doesn't really make sense because strong overrides em.
+
+```html
+<p><em><strong>Hello world</strong><em></p>
+```
+
+## (3) Span
+
+`<span>` is a generic inline container for phrasing content. It is only used for styling purposes. It should be used only no other semantic element is appropriate. It is like a `<div>`. 
 
 
 ## References
