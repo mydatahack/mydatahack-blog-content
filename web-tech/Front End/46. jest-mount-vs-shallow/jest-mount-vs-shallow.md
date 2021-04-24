@@ -1,6 +1,6 @@
 # What You May Not Know About Jest's Mount Method
 
-If you are a React developer, you probably know the difference between mount and shallow when you are unit testing react components with jest. Mount renders full DOM. We use it when the component interacts with DOM Api or require a full lifecycle to fully test the component. On the other hand, shallow renders only the component you are testing to avoid asserting on the behaviours of child components indirectly. Ok, these are pretty well know facts.
+If you are a React developer, you probably know the difference between mount and shallow when you are unit testing react components with jest. Mount renders full DOM. We use it when the component interacts with DOM Api or require a full lifecycle to fully test the component. On the other hand, shallow renders only the component you are testing to avoid asserting on the behaviours of child components indirectly. Ok, these are pretty well known facts.
 
 Ok, so if you have a component without a child, do you think both shallow and mount render html the same? The answer is no. They actually render differently. In short, mount renders html wrapped with the component tag while shallow just renders as you expect. 
 
