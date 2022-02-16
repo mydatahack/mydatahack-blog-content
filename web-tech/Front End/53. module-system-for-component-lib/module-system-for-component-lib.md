@@ -2,7 +2,7 @@
 
 JavaScript module system has been evolving as the language and technology evolves. There are a few different modules systems you can choose when you are bundling a JS library.
 
-The best module system for a frontend component library is <span class="code">ESM</span>. It stands for ES Modules and is JS proposal to implement a standard module system.
+The best module system for a frontend component library is <span class="code">ESM</span>. It stands for ES Modules. It is It is the official standard format to package JavaScript (<a href="https://tc39.es/ecma262/#sec-modules" target="_blank">see the language spec</a>). Node.js supports it, too (<a href="https://nodejs.medium.com/announcing-core-node-js-support-for-ecmascript-modules-c5d6dc29b663#:~:text=js%20Module%20Team.-,Node.,experimental%20and%20subject%20to%20change." target="_blank">see the announcement</a>).
 
 <strong>Because:</strong>
 
