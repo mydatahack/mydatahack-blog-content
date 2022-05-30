@@ -9,11 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "4.0.0",
-    "ejs": "2.6.1",
-    "body-parser": "1.18.3",
-    "express": "4.16.3",
-    "jquery": "3.3.1",
-    "popper.js": "1.12.9"
+    // These are all too behind. If we ever need to install them, we should upgrade.
+    // "bootstrap": "4.0.0",
+    // "ejs": "2.6.1",
+    // "body-parser": "1.18.3",
+    // "express": "4.16.3",
+    // "jquery": "3.3.1",
+    // "popper.js": "1.12.9"
+
   }
 }
