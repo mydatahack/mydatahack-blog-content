@@ -15,3 +15,7 @@ If you have type conflicts caused by different version dependencies in old packa
 </pre>
 
 See further information on <span class="code">React.VFC</span> <a href="https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components/" target="_blank">here</a>.
+
+<p style="color:#dd3333"><strong>UPDATE</strong></p>
+
+Since the release of React 18, <span class="code">React.FC</span> no longer includes implicit children and <span class="code">React.VFC</span> is deprecated. We should move away from them (<a href="https://www.mydatahack.com/moving-away-from-fc-and-vfc" target="_blank">Moving away from React.FC and React.VFC</a>).
