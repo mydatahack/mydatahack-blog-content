@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "async": "2.6.0",
     "csvtojson": "^1.1.9",
     "event": "^1.0.0",
     "json2csv": "4.0.4",
