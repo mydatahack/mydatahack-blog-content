@@ -1,5 +1,7 @@
 # What software technologies are used in a space shuttle?
 
+(extract from an online article)
+
 SpaceX Dragon Capsule was first successfully launched on May 30th, 2020 with two astronauts on board. As a software engineer, I was curious to know what software technologies are used in this rocket.
 
 All the user interfaces run on Chromium and are written entirely in HTML, CSS and JavaScripts just like other websites instead of using lower-level programming languages. They are responsible for displaying all relevant information as well as handling the astronaut taps and swipes.
@@ -15,7 +17,3 @@ https://lithiosapps.com/a-look-under-the-hood-of-spacexs-dragon-capsule/
 https://thenewstack.io/the-hardware-and-software-used-in-space/
 
 https://old.reddit.com/r/spacex/comments/gxb7j1/we_are_the_spacex_software_team_ask_us_anything/
-
-# Why Docker is better than VM?
-
-Important question to answer. Not really sure yet, because I don't really know how docker works.
