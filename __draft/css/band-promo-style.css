@@ -1,0 +1,22 @@
+.page-layout-container-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-layout-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 1170px;
+}
+
+.streaming-provider-icon-container{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.streaming-service-provider-icon:hover svg {
+  fill: #dd3333;
+}

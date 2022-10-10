@@ -1,6 +1,16 @@
 ## New
 
-subtitle
+subtitle: Imperfection is the fingerprint of your soul
+
+Welcome!
+
+
+<p>
+I'm a software engineer. I am currently specializing in frontend development with React. In the past, I have done backend, data engineering and devops. That is why this site contains so many topics from the different areas of software engineering. It is to record what I learned from working with various projects I've been involved in and share some tips. Please leave comments if you have any feedback or questions. I would love to bounce ideas off everyone!
+</p>
+<p>
+I'm also a musician. My main instruments are guitar and piano. I also attempt to write songs and sing. My main project is called, <a href="" target="_blank">The Hondas</a>. If you are interested, check us out. We've got a lot of albums, but it is always good to listen to the latest one because that's where I am at the moment.
+</p>
 
 ## Original
 
