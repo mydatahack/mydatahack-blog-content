@@ -10,9 +10,10 @@ Go to <span class="code">Code</span> -> <span class="code">Preference</span> -> 
 
 Search <span class="code">codeActionsOnSave</span>, click <span class="code">edit in settings.json</span> and add the config below.
 
-<pre>
+<pre><code class="language-json">
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   "eslint.validate": ["javascript", "typescript"]
-</pre>
+
+</code></pre>
