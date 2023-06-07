@@ -1,1 +1,1 @@
-Format a little with html tag. When you have a list, use the list tags appropriately. When you have a new line, add <br /><br />. Introduction and conclusion has to be wrapped in the strong tag. Any subtitle, wrap it in the strong tag, too.
+Format a little with html tag. When you have a list, use the list tags appropriately. When you have a new line, add <br /><br />. Introduction and conclusion has to be wrapped in the strong tag and also add <br /><br />. Any subtitle, wrap it in the strong tag, too. When you have ``, replace it with <span class="code"></span>.
